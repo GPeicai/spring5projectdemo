@@ -10,5 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>chapter6</artifactId>
     <version>${spring5.chapter6.version}</version>
+    <dependencies>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <version>3.2.5.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
     <packaging>jar</packaging>
 </project>

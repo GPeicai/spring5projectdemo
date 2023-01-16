@@ -1,5 +1,6 @@
 package com.test.aspectj.expression.thisexpression;
 
+import com.test.aspectj.expression.Factory;
 import com.test.aspectj.expression.FoodFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,7 +13,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ThisExpressionDemo {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-chapter3-aspectjthisexpression.xml");
-        FoodFactory foodFactory = (FoodFactory) context.getBean("foodFactory");
+        Object obj = context.getBean("foodFactory");
+        Factory foodFactory = (Factory) obj;
         foodFactory.make();
         System.out.println("-----分割线-----");
         Listener listener = (Listener) foodFactory;
